@@ -8,4 +8,5 @@ metadata:
     app: gvl-sso
 spec:
 {{- tpl (tpl (toYaml $client.spec) $) $ | nindent 2 -}}
+---
 {{ end }}
