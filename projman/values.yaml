@@ -146,6 +146,25 @@ configs: {}
   #         echo "The $CLIENT_ID client already exists."
   #   fi
 
+keycloak:
+  namespace: keycloak
+  clients: {}
+    # initial:
+    #   spec:
+    #     realmSelector:
+    #       matchLabels:
+    #         app: "gvl-sso"
+    #     client:
+    #       clientId: "initial"
+    #       protocol: openid-connect
+    #       enabled: true
+    #       name: Client for project initial
+    #       publicClient: false
+    #       standardFlowEnabled: true
+    #       redirectUris:
+    #         - 'https://example.usegvl.org/*'
+
+
 
 secrets: {}
   # db-password: changeme

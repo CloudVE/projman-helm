@@ -1,0 +1,12 @@
+{{ range $key, $client := .Values.keycloak.clients -}}
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: {{ template "projman.fullname" $ }}-{{ $key }}-keycloakclient
+  namespace: {{ $.Values.keycloak.namespace }}
+  labels:
+    app: gvl-sso
+spec:
+{{- tpl (tpl (toYaml $client.spec) $) $ | nindent 2 -}}
+---
+{{ end }}
